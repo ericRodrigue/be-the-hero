@@ -22,6 +22,10 @@ function Register(){
         toast.success('Erro no cadastro, tente novamente.', { className: 'toastify' });
     };
 
+    const notifySuccess = (id) => {
+        toast.success(`Seu ID de acesso: ${id}.`, { className: 'toastify', autoClose: false });
+    };
+
     async function hangleRegister(e){
         e.preventDefault();
 
@@ -29,7 +33,7 @@ function Register(){
 
         try{
             const response = await api.post('ongs', data);
-            alert(`Seu ID de acesso: ${response.data.id}`);
+            notifySuccess(response.data.id);
             history.push('/');
         } catch(err) {
             notify();
