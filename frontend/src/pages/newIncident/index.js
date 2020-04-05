@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 import logoImg from '../../assets/logo.svg';
 import './style.css';
+
+toast.configure();
 
 function NewIncident(){
     const [title, setTitle] = useState('');
@@ -17,6 +21,10 @@ function NewIncident(){
         history.push('/');
     }
 
+    const notify = () => {
+        toast.success('Falha ao cadastrar incidente, tente novamente.', { className: 'toastify' });
+    };
+
     async function handleNewIncident(e){
         e.preventDefault();
 
@@ -29,7 +37,7 @@ function NewIncident(){
 
             history.push('/profile');
         }catch(err){
-            alert('Falha ao cadastrar incidente, tente novamente.');
+            notify();
         }
     }
 

@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {FiArrowLeft} from 'react-icons/fi';
 import api from '../../services/api';
 import './style.css'
 import '../../global.css';
 import logoImg from '../../assets/logo.svg';
+
+toast.configure();
 
 function Register(){
     const [name, setName] = useState('');
@@ -12,8 +16,11 @@ function Register(){
     const [whatsapp, setWhatsapp] = useState('');
     const [city, setCity] = useState('');
     const [uf, setUf] = useState('');
-
     const history = useHistory();
+
+    const notify = () => {
+        toast.success('Erro no cadastro, tente novamente.', { className: 'toastify' });
+    };
 
     async function hangleRegister(e){
         e.preventDefault();
@@ -25,7 +32,7 @@ function Register(){
             alert(`Seu ID de acesso: ${response.data.id}`);
             history.push('/');
         } catch(err) {
-            alert('Erro no cadastro, tente novamente.');
+            notify();
         }
     }
 
