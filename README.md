@@ -8,7 +8,6 @@ O projeto consiste em um sistema web, implementação essa que visa ser um siste
 * HTML
 * CSS
 * NodeJS
-* Java Script
 * ReactJs
 * SQLite
 
@@ -19,7 +18,7 @@ O projeto consiste em um sistema web, implementação essa que visa ser um siste
 ![Print 3 da aplicação](https://github.com/ericrodriguesfer/utilities-readme/blob/master/be-the-hero/img-3.png)
 ![Print 4 da aplicação](https://github.com/ericrodriguesfer/utilities-readme/blob/master/be-the-hero/img-4.png)
 
-## CASO QUEIRA ENTENDER O FUNCIONAMENTO D0 SISTEMA NA PRÁTICA
+## CASO QUEIRA ENTENDER O FUNCIONAMENTO DO SISTEMA NA PRÁTICA
 
 [Apresentação não narrada de utilização da aplicação](https://youtu.be/pDy-yTHvqko)
 
